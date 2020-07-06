@@ -6,12 +6,32 @@ import java.io.*;
 
 public class Factor {
 
+	public static final BigInteger zero = BigInteger.ZERO;
+	public static final BigInteger one = BigInteger.ONE;
+	public static final BigInteger two = BigInteger.TWO;
+	
+	public static ArrayList<Integer[]> factorize(BigInteger num) {
+		
+		ArrayList<Integer[]> factors = new ArrayList<Integer[]>();
+		BigInteger k = two;
+		
+		while (num.compareTo(one) != 0) {
+			if (num.mod(k).compareTo(zero) == 0) {
+				int count = 0;
+				while (num.mod(k).compareTo(zero) == 0) {
+					num = num.divide(k);
+					count++;
+				}
+				factors.add(new Integer[] {k.intValue(), count});
+			}
+			k = k.add(one);
+		}
+		return factors;
+	}
+	
 	public static void main(String[] args) {
 		
 		BigInteger num = BigInteger.ZERO;
-		BigInteger zero = BigInteger.ZERO;
-		BigInteger one = BigInteger.ONE;
-		BigInteger two = BigInteger.TWO;
 		
 		try {
 			String data = "";
@@ -30,25 +50,12 @@ public class Factor {
 		
 		if (num.compareTo(one) > 0) {
 			
-			ArrayList<Integer[]> factors = new ArrayList<Integer[]>(); 
 			ArrayList<Integer> cells = new ArrayList<Integer>();
 			cells.add(0);
 			String s = "";
 			int pointer = 0;
-			BigInteger k = two;
 			
-			while (num.compareTo(one) != 0) {
-				if (num.mod(k).compareTo(zero) == 0) {
-					int count = 0;
-					while (num.mod(k).compareTo(zero) == 0) {
-						num = num.divide(k);
-						count++;
-					}
-					factors.add(new Integer[] {k.intValue(), count});
-				}
-				k = k.add(one);
-			}
-			
+			ArrayList<Integer[]> factors = factorize(num);
 			Scanner input = new Scanner(System.in);
 			
 			for (int j = 0; j < factors.size(); j++) {
