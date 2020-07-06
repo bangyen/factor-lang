@@ -10,23 +10,23 @@ public class Factor {
 	public static final BigInteger one = BigInteger.ONE;
 	public static final BigInteger two = BigInteger.TWO;
 	
-	public static ArrayList<Integer[]> factorize(BigInteger num) {
+	public static ArrayList<Integer[]> factorize(BigInteger composite) {
 		
-		ArrayList<Integer[]> factors = new ArrayList<Integer[]>();
+		ArrayList<Integer[]> primes = new ArrayList<Integer[]>();
 		BigInteger k = two;
 		
-		while (num.compareTo(one) != 0) {
-			if (num.mod(k).compareTo(zero) == 0) {
+		while (composite.compareTo(one) != 0) {
+			if (composite.mod(k).compareTo(zero) == 0) {
 				int count = 0;
-				while (num.mod(k).compareTo(zero) == 0) {
-					num = num.divide(k);
+				while (composite.mod(k).compareTo(zero) == 0) {
+					composite = composite.divide(k);
 					count++;
 				}
-				factors.add(new Integer[] {k.intValue(), count});
+				primes.add(new Integer[] {k.intValue(), count});
 			}
 			k = k.add(one);
 		}
-		return factors;
+		return primes;
 	}
 	
 	public static void main(String[] args) {
