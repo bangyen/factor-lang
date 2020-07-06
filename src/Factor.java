@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.lang.Math;
 import java.math.BigInteger;
 import java.nio.file.*;
 import java.io.*;
@@ -118,6 +117,7 @@ public class Factor {
 							}
 						}
 						break;
+					default: break;
 				}
 			}
 			
