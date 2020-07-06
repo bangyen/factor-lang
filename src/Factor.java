@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.lang.Math;
 import java.math.BigInteger;
+import java.nio.file.*;
 import java.io.*;
 
 public class Factor {
@@ -14,10 +15,19 @@ public class Factor {
 		BigInteger two = BigInteger.TWO;
 		
 		try {
-	        num = new BigInteger(args[0]);
-	    } catch (NumberFormatException|ArrayIndexOutOfBoundsException nfe) {
-	        System.out.println("Not a valid program.");
-	    }
+			String data = "";
+			String example = ".\\examples\\" + args[0];
+			if (new File(example).exists()) {
+				data = new String(Files.readAllBytes(Paths.get(example)));
+			} else {
+				data = new String(Files.readAllBytes(Paths.get(args[0])));
+			}
+	        num = new BigInteger(data.replaceAll("[^0-9]", ""));
+		} catch (NumberFormatException
+				|ArrayIndexOutOfBoundsException
+				|IOException nfe) {
+			System.out.println("Not a valid program.");
+		}
 		
 		if (num.compareTo(one) > 0) {
 			
