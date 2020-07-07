@@ -5,7 +5,7 @@ Factor is an esoteric programming language based on the prime *factor*ization of
 
 | **Z**₁₁ Residue                     | 1 | 2 | 3 | 4 | 5 | 6 | 7  | 8  |
 |-------------------------------------|---|---|---|---|---|---|----|----|
-| Corresponding Brainfuck instruction | > | < | + | - | . | , | \[ | \] |
+| Corresponding Brainfuck Instruction | > | < | + | - | . | , | \[ | \] |
 
 ## Example
 In the `examples` folder is the familiar ["Hello, World!" program](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program). The file, named `hello-world.fact`, consists of the following number spread among three lines:
