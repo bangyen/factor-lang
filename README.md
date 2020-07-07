@@ -9,7 +9,7 @@ Factor is an esoteric programming language based on the prime *factor*ization of
 | Corresponding Brainfuck Instruction | > | < | + | - | . | , | \[ | \] |
 
 ## Example
-In the `examples` folder is the familiar ["Hello, World!" program](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program). The file, named `hello-world.fact`, consists of the following number spread among three lines:
+In the `examples` folder is the familiar ["Hello World!" program](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program). The file, named `hello-world.fact`, consists of the following number spread among three lines:
 ```fact
 1655681263349701521084659680611551719864071403625859675993155360184979650875317924075071663014170796
 3982142000896058372565757592464788558159819435061699693781799182850358327927823218744238796733811436
