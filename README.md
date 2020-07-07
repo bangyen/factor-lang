@@ -22,9 +22,7 @@ In the `examples` folder is the familiar ["Hello World!" program](https://en.wik
 ## Usage
 All `.fact` programs are interpreted in Java. To run a `.fact` program, follow the following instructions:
 -   Download the repository
-
 -   Unzip the repository file
-
 -   In the terminal, run the following commands in the `src` folder:
     -   `javac Factor.java`
     -   `java Factor your-file.fact`
