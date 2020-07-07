@@ -1,9 +1,9 @@
 # Factor
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/2cbcc0dfcb3e43cc98663442cea1948a)](https://www.codacy.com/manual/bangyen99/factor-lang?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bangyen/factor-lang&amp;utm_campaign=Badge_Grade)
 
-Factor is an esoteric programming language based on the prime *factor*ization of numbers. Every program is a number, and the instructions of each program are determined by the number's prime factors and their multiplicity. Each factor is a different instruction, and each factor's multiplicity is the number of times the instruction is carried out. The order of the instructions is determined by sorting the factors in ascending order. The different instructions are as follows:
+Factor is an esoteric programming language based on the prime *factor*ization of numbers. Every program is a number, and the instructions of each program are determined by the number's prime factors and their multiplicity. Each factor is a different instruction (based on it's ), and each factor's multiplicity is the number of times the instruction is carried out. The order of the instructions is determined by sorting the factors in ascending order. The different instructions are as follows:
 
-| factor % 11                         | 1 | 2 | 3 | 4 | 5 | 6 | 7  | 8  |
+| **Z**₁₁ Residue                     | 1 | 2 | 3 | 4 | 5 | 6 | 7  | 8  |
 |-------------------------------------|---|---|---|---|---|---|----|----|
 | Corresponding Brainfuck instruction | > | < | + | - | . | , | \[ | \] |
 
