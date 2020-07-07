@@ -3,16 +3,16 @@
 
 Factor is an esoteric programming language based on the prime *factor*ization of numbers. Every program is a number, and the instructions of each program are determined by the number's prime factors and their multiplicity. Each factor is a different instruction, and each factor's multiplicity is the number of times the instruction is carried out. The order of the instructions is determined by sorting the factors in ascending order. The different instructions are as follows:
 
-| `factor % 11` | instruction                                                               |
-----------------|----------------------------------------------------------------------------
-| `1`           | Move the pointer right                                                    |
-| `2`           | Move the pointer left                                                     |
-| `3`           | Increment the current cell                                                |
-| `4`           | Decrement the current cell                                                |
-| `5`           | Output the character corresponding to the ASCII value of the current cell |
-| `6`           | Assign the ASCII value of the input to the current cell                   |
-| `7`           | Begin a while loop                                                        |
-| `8`           | End the corresponding while loop                                          |
+| `factor % 11` | Corresponding Brainfuck instruction |
+----------------|--------------------------------------
+| `1`           | `>`                                 |
+| `2`           | `<`                                 |
+| `3`           | `+`                                 |
+| `4`           | `-`                                 |
+| `5`           | `.`                                 |
+| `6`           | `,`                                 |
+| `7`           | `[`                                 |
+| `8`           | `]`                                 |
 
 ## Example
 In the `examples` folder is the familiar ["Hello, World!" program](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program). The file, named `hello-world.fact`, consists of the following number spread among three lines:
