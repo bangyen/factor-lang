@@ -57,7 +57,6 @@ public class Factor {
 			
 			ArrayList<Integer> cells = new ArrayList<Integer>();
 			cells.add(0);
-			String s = "";
 			int pointer = 0;
 			
 			ArrayList<Integer[]> factors = factorize(num);
@@ -86,7 +85,7 @@ public class Factor {
 						break;
 					case 5:
 						for (int i = 0; i < pair[1]; i++) {
-							s += (char) (int) cells.get(pointer);
+							System.out.print((char) (int) cells.get(pointer));
 						}
 						break;
 					case 6:
@@ -129,7 +128,6 @@ public class Factor {
 			}
 			
 			input.close();
-			System.out.println(s);
 		}
 	}
 
