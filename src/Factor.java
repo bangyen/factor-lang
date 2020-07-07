@@ -35,6 +35,10 @@ public class Factor {
 		BigInteger num = BigInteger.ZERO;
 		
 		try {
+			if (!args[0].strip().endsWith(".fact")) {
+				System.out.println("Not a valid program.");
+				return;
+			}
 			String data = "";
 			String example = ".\\examples\\" + args[0];
 			if (new File(example).exists()) {
@@ -61,7 +65,6 @@ public class Factor {
 			
 			for (int j = 0; j < factors.size(); j++) {
 				
-				boolean eof = false; if (eof) break;
 				Integer[] pair = factors.get(j);
 				int matching = 0;
 				
@@ -82,10 +85,6 @@ public class Factor {
 						cells.set(pointer, (cells.get(pointer) - pair[1]) % 256);
 						break;
 					case 5:
-						if (cells.get(pointer) == 0) {
-							eof = true;
-							break;
-						}
 						for (int i = 0; i < pair[1]; i++) {
 							s += (char) (int) cells.get(pointer);
 						}
