@@ -22,7 +22,7 @@ The [`cat`](https://esolangs.org/wiki/Cat_program) program, on the other hand, i
 ```latex
 17 ≡ 6 (mod 11)      29 ≡ 7 (mod 11)      71 ≡ 5 (mod 11)      83 ≡ 6 (mod 11)      107 ≡ 8 (mod 11)
 ```
-A [brainfuck interpreter](http://www.hevanet.com/cristofd/brainfuck/dbfi.b).
+A [brainfuck interpreter](http://www.hevanet.com/cristofd/brainfuck/dbfi.b) by Daniel B. Cristofani.
 ```fact
 3688554400115082608624508453730280728908132818764696846834669229770777761772478005527507177418120694
 3297612030934022193841677684549386729697395145284043549103432860149551273007692661521521238378585373
