@@ -52,14 +52,14 @@ Below is Ruby code for translating brainfuck code into Factor.
 require 'prime'
 
 def translate(code)
-  res = 1; i = 2; str = '0><+-.,[]'
-  for char in code.chars
-    while i % 11 != str.index(char) || !i.prime?
-      i += 1
+    res = 1; i = 2; str = '0><+-.,[]'
+    for char in code.chars
+        while i % 11 != str.index(char) || !i.prime?
+            i += 1
+        end
+        res *= i
     end
-    res *= i
-  end
-  res
+    res
 end
 ```
 
