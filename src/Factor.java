@@ -18,16 +18,45 @@ public class Factor {
 		
 		while (temp.compareTo(one) != 0) {
 			if (temp.mod(k).compareTo(zero) == 0) {
-				int count = 0;
-				while (temp.mod(k).compareTo(zero) == 0) {
-					temp = temp.divide(k);
-					count++;
+				int mod = k.intValue() % 11;
+				if (7 <= mod && mod <= 8) {
+					while (temp.mod(k).compareTo(zero) == 0) {
+						temp = temp.divide(k);
+						factors.add(new Integer[] {k.intValue(), 1});
+					}
+				} else {
+					int count = 0;
+					while (temp.mod(k).compareTo(zero) == 0) {
+						temp = temp.divide(k);
+						count++;
+					}
+					factors.add(new Integer[] {k.intValue(), count});
 				}
-				factors.add(new Integer[] {k.intValue(), count});
 			}
 			k = k.add(one);
 		}
 		return factors;
+	}
+	
+	public static int findBracket(ArrayList<Integer[]> symbols, int index, int mode) {
+		
+		int diff = mode == 7 ? 1 : -1;
+		int bracket = diff;
+		int num = index;
+		
+		while (bracket != 0) {
+			num = num + diff;
+			switch (symbols.get(num)[0] % 11) {
+				case 7:
+					bracket++;
+					break;
+				case 8:
+					bracket--;
+					break;
+				default: break;
+			}
+		}
+		return num;
 	}
 	
 	public static void main(String[] args) {
@@ -46,7 +75,7 @@ public class Factor {
 			} else {
 				data = new String(Files.readAllBytes(Paths.get(args[0])));
 			}
-	        num = new BigInteger(data.replaceAll("[^0-9]", ""));
+	        	num = new BigInteger(data.replaceAll("[^0-9]", ""));
 		} catch (NumberFormatException
 				|ArrayIndexOutOfBoundsException
 				|IOException nfe) {
@@ -58,6 +87,7 @@ public class Factor {
 			ArrayList<Integer> cells = new ArrayList<Integer>();
 			cells.add(0);
 			int pointer = 0;
+			boolean line = false;
 			
 			ArrayList<Integer[]> factors = factorize(num);
 			Scanner input = new Scanner(System.in);
@@ -65,13 +95,16 @@ public class Factor {
 			for (int j = 0; j < factors.size(); j++) {
 				
 				Integer[] pair = factors.get(j);
-				int matching = 0;
 				
 				switch (pair[0] % 11) {
 					case 1:
 						pointer += pair[1];
 						if (pointer + 1 > cells.size()) {
-							cells.add(0);
+							int i = 0;
+							while (i < pair[1]) {
+								cells.add(0);
+								i++;
+							}
 						}
 						break;
 					case 2:
@@ -81,7 +114,7 @@ public class Factor {
 						cells.set(pointer, (cells.get(pointer) + pair[1]) % 256);
 						break;
 					case 4:
-						cells.set(pointer, (cells.get(pointer) - pair[1]) % 256);
+						cells.set(pointer, (cells.get(pointer) - pair[1] + 256) % 256);
 						break;
 					case 5:
 						for (int i = 0; i < pair[1]; i++) {
@@ -90,37 +123,20 @@ public class Factor {
 						break;
 					case 6:
 						for (int i = 0; i < pair[1]; i++) {
-							System.out.print("Input: ");
-							int charInput = (int) (input.nextLine() + " ").charAt(0);
+							System.out.print(line ? "\nInput: " : "Input: ");
+							int charInput = (int) (input.nextLine() + (char) 0).charAt(0);
 							cells.set(pointer, charInput);
+							line = true;
 						}
 						break;
 					case 7:
 						if (cells.get(pointer) == 0) {
-							matching++;
-							while (matching != 0) {
-								j++;
-								int val = factors.get(j)[0] % 11;
-								if (val == 7) {
-									matching++;
-								} else if (val == 8) {
-									matching--;
-								}
-							}
+							j = findBracket(factors, j, 7) - 1;
 						}
 						break;
 					case 8:
 						if (cells.get(pointer) != 0) {
-							matching--;
-							while (matching != 0) {
-								j--;
-								int val = factors.get(j)[0] % 11;
-								if (val == 7) {
-									matching++;
-								} else if (val == 8) {
-									matching--;
-								}
-							}
+							j = findBracket(factors, j, 8) - 1;
 						}
 						break;
 					default: break;
