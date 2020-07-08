@@ -9,7 +9,7 @@
 |-------------------------------------|---|---|---|---|---|---|----|----|
 | Brainfuck Equivalent                | > | < | + | - | . | , | \[ | \] |
 
-The number `11` was chosen because it is the smallest number such that there exists at least `8` (the number of instructions) natural numbers less than and coprime to it. The reason why coprimality is important is because [Dirichlet's theorem](https://en.wikipedia.org/wiki/Dirichlet%27s_theorem_on_arithmetic_progressions) ensures that there are an infinite number of primes that are congruent to each coprime integer modulo `11`. As a result, because Factor is isomorphic to Brainfuck, a Turing complete language, Factor is *also* Turing complete.
+Left and right refer to moving the pointer, whereas increment and decrement refer to changing the cell designated by the pointer. Loops are started if the current cell value is nonzero, and loops are ended if the current cell is zero. The cells are right unbounded and wrap at 0 and 256. All characters other than 0123456789 should be considered comments and ignored. 
 
 ## Example
 In the `examples` folder is the familiar ["Hello World!" program](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program). The file, named `hello-world.fact`, consists of the following number spread among three lines:
@@ -22,6 +22,10 @@ The [`cat`](https://esolangs.org/wiki/Cat_program) program, on the other hand, i
 ```latex
 17 ≡ 6 (mod 11)      29 ≡ 7 (mod 11)      71 ≡ 5 (mod 11)      83 ≡ 6 (mod 11)      107 ≡ 8 (mod 11)
 ```
+
+## Turing Completeness
+The number `11` was chosen because it is the smallest number such that there exists at least `8` (the number of instructions) natural numbers less than and coprime to it. The reason why coprimality is important is because [Dirichlet's theorem](https://en.wikipedia.org/wiki/Dirichlet%27s_theorem_on_arithmetic_progressions) ensures that there are an infinite number of primes that are congruent to each coprime integer modulo `11`. As a result, because Factor is isomorphic to Brainfuck, a Turing complete language, Factor is *also* Turing complete.
+
 ## Usage
 All `.fact` programs are interpreted in Java. To run a `.fact` program, follow the following instructions:
 -   Download the repository
