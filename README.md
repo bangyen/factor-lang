@@ -12,9 +12,10 @@
 ## About
 [Factor](https://esolangs.org/wiki/Factor) is a zero-dimensional, cell-based, esoteric programming language based on the prime *factor*ization of numbers. Every program is a number, and the instructions of each program are determined by the number's prime factors and their multiplicity. Each factor is a different instruction (based on it's residue modulo `11`), and each factor's multiplicity is the number of times the instruction is carried out. The order of the instructions is determined by sorting the factors in ascending order. The different instructions are as follows:
 
-| Z₁₁ Residue                         | 1 | 2 | 3 | 4 | 5 | 6 | 7  | 8  |
-|-------------------------------------|---|---|---|---|---|---|----|----|
-| Brainfuck Equivalent                | > | < | + | - | . | , | \[ | \] |
+|                                     | Move left | Move right | Increment | Decrement | Output | Input | Start loop | End loop |
+|-------------------------------------|:---------:|:----------:|:---------:|:---------:|:------:|:-----:|:----------:|:--------:|
+| Z₁₁ Residue                         | 1         | 2          | 3         | 4         | 5      | 6     | 7          | 8        |
+| Brainfuck Equivalent                | >         | <          | +         | -         | .      | ,     | \[         | \]       |
 
 Left and right refer to moving the pointer, whereas increment and decrement refer to changing the cell designated by the pointer. Loops are started if the current cell value is nonzero, and loops are ended if the current cell is zero. The cells are right unbounded and wrap at 0 and 256. All characters other than 0123456789 should be considered comments and ignored. 
 
@@ -25,10 +26,16 @@ In the `examples` folder is the familiar ["Hello World!" program](https://en.wik
 3982142000896058372565757592464788558159819435061699693781799182850358327927823218744238796733811436
 76538661836790083866016752674868707301142092304365222517116382208838942082995905598124019955549
 ```
-The [`cat`](https://esolangs.org/wiki/Cat_program) program, on the other hand, is represented as the number `310861643`. The brainfuck equivalent would be `,[.,]`, since its prime factorization is `17 * 29 * 71 * 83 * 107`. The equivalence is a result of the following congruencies: 
-```latex
-17 ≡ 6 (mod 11)      29 ≡ 7 (mod 11)      71 ≡ 5 (mod 11)      83 ≡ 6 (mod 11)      107 ≡ 8 (mod 11)
-```
+The [`cat`](https://esolangs.org/wiki/Cat_program) program, on the other hand, is represented as the number `310861643`. The brainfuck equivalent would be `,[.,]`, since its prime factorization is `17 * 29 * 71 * 83 * 107`. The equivalence is a result of the following congruencies:
+
+| Modular Equation | Instruction |
+|:----------------:|:-----------:|
+| 17 ≡ 6 (mod 11)  | Input       |
+| 29 ≡ 7 (mod 11)  | Start loop  |
+| 71 ≡ 5 (mod 11)  | Output      |
+| 83 ≡ 6 (mod 11)  | Input       |
+| 107 ≡ 8 (mod 11) | End loop    |
+
 Finally, a [brainfuck interpreter](http://www.hevanet.com/cristofd/brainfuck/dbfi.b) by Daniel B. Cristofani.
 ```fact
 3688554400115082608624508453730280728908132818764696846834669229770777761772478005527507177418120694
