@@ -123,11 +123,11 @@ public class Factor {
 						break;
 					case 6:
 						for (int i = 0; i < pair[1]; i++) {
-							System.out.print(line ? "\nInput: " : "Input: ");
+							System.out.print(!line && i == 0 ? "Input: " : "\nInput: ");
 							int charInput = (int) (input.nextLine() + (char) 0).charAt(0);
 							cells.set(pointer, charInput);
-							line = true;
 						}
+						line = true;
 						break;
 					case 7:
 						if (cells.get(pointer) == 0) {
