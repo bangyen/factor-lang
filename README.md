@@ -19,7 +19,7 @@ In the `examples` folder is the familiar ["Hello World!" program](https://en.wik
 76538661836790083866016752674868707301142092304365222517116382208838942082995905598124019955549
 ```
 The [`cat`](https://esolangs.org/wiki/Cat_program) program, on the other hand, is represented as the number `310861643`. The brainfuck equivalent would be `,[.,]`, since its prime factorization is `17 * 29 * 71 * 83 * 107`. The equivalence is a result of the following congruencies: 
-```
+```latex
 17 ≡ 6 (mod 11)      29 ≡ 7 (mod 11)      71 ≡ 5 (mod 11)      83 ≡ 6 (mod 11)      107 ≡ 8 (mod 11)
 ```
 ## Usage
