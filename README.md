@@ -20,7 +20,7 @@ In the `examples` folder is the familiar ["Hello World!" program](https://en.wik
 ```
 The [`cat`](https://esolangs.org/wiki/Cat_program) program, on the other hand, is represented as the number `310861643`. The brainfuck equivalent would be `,[.,]`, since the prime factorization of `310861643` is `17 * 29 * 71 * 83 * 107`. The equivalence is a result of the following congruencies:
 
-![Modular equations](https://quicklatex.com/cache3/6e/ql_eb1c2cd73432baa347d09b84caa1266e_l3.png)
+![Modular equations](https://quicklatex.com/cache3/4c/ql_5e4e6b24e5dc78deebde48f9a442c14c_l3.png)
 
 ## Usage
 All `.fact` programs are interpreted in Java. To run a `.fact` program, follow the following instructions:
