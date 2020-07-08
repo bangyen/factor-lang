@@ -34,8 +34,8 @@ require 'prime'
 
 def translate(code)
   res = 1; i = 2; str = '0><+-.,[]'
-  for char in code
-    while i % 11 != str.index(char)
+  for char in code.chars
+    while i % 11 != str.index(char) || !i.prime?
       i += 1
     end
     res *= i
