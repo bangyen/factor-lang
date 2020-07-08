@@ -2,6 +2,13 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/2cbcc0dfcb3e43cc98663442cea1948a)](https://www.codacy.com/manual/bangyen99/factor-lang?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=bangyen/factor-lang&amp;utm_campaign=Badge_Grade)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
+## Table of Contents
+-   [About](#about)
+-   [Examples](#examples)
+-   [Computational Class](#computational-class)
+-   [Brainfuck Translations](#brainfuck-translations)
+-   [Usage](#usage)
+
 ## About
 [Factor](https://esolangs.org/wiki/Factor) is a zero-dimensional, cell-based, esoteric programming language based on the prime *factor*ization of numbers. Every program is a number, and the instructions of each program are determined by the number's prime factors and their multiplicity. Each factor is a different instruction (based on it's residue modulo `11`), and each factor's multiplicity is the number of times the instruction is carried out. The order of the instructions is determined by sorting the factors in ascending order. The different instructions are as follows:
 
@@ -11,7 +18,7 @@
 
 Left and right refer to moving the pointer, whereas increment and decrement refer to changing the cell designated by the pointer. Loops are started if the current cell value is nonzero, and loops are ended if the current cell is zero. The cells are right unbounded and wrap at 0 and 256. All characters other than 0123456789 should be considered comments and ignored. 
 
-## Example
+## Examples
 In the `examples` folder is the familiar ["Hello World!" program](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program). The file, named `hello-world.fact`, consists of the following number spread among three lines:
 ```fact
 1655681263349701521084659680611551719864071403625859675993155360184979650875317924075071663014170796
@@ -22,7 +29,7 @@ The [`cat`](https://esolangs.org/wiki/Cat_program) program, on the other hand, i
 ```latex
 17 ≡ 6 (mod 11)      29 ≡ 7 (mod 11)      71 ≡ 5 (mod 11)      83 ≡ 6 (mod 11)      107 ≡ 8 (mod 11)
 ```
-A [brainfuck interpreter](http://www.hevanet.com/cristofd/brainfuck/dbfi.b) by Daniel B. Cristofani.
+Finally, a [brainfuck interpreter](http://www.hevanet.com/cristofd/brainfuck/dbfi.b) by Daniel B. Cristofani.
 ```fact
 3688554400115082608624508453730280728908132818764696846834669229770777761772478005527507177418120694
 3297612030934022193841677684549386729697395145284043549103432860149551273007692661521521238378585373
@@ -45,7 +52,7 @@ A [brainfuck interpreter](http://www.hevanet.com/cristofd/brainfuck/dbfi.b) by D
 ## Computational Class
 The number `11` was chosen because it is the smallest number such that there exists at least `8` (the number of instructions) natural numbers less than and coprime to it. The reason why coprimality is important is because [Dirichlet's theorem](https://en.wikipedia.org/wiki/Dirichlet%27s_theorem_on_arithmetic_progressions) ensures that there are an infinite number of primes that are congruent to each coprime integer modulo `11`. As a result, because Factor is isomorphic to Brainfuck, a Turing complete language, Factor is *also* Turing complete.
 
-## Brainfuck Translation
+## Brainfuck Translations
 Below is Ruby code for translating brainfuck code into Factor.
 
 ```ruby
