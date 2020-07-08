@@ -12,7 +12,7 @@
 ## About
 [Factor](https://esolangs.org/wiki/Factor) is a zero-dimensional, cell-based, esoteric programming language based on the prime *factor*ization of numbers. Every program is a number, and the instructions of each program are determined by the number's prime factors and their multiplicity. Each factor is a different instruction (based on it's residue modulo `11`), and each factor's multiplicity is the number of times the instruction is carried out. The order of the instructions is determined by sorting the factors in ascending order. The different instructions are as follows:
 
-|                                     | Move left | Move right | Increment | Decrement | Output | Input | Start loop | End loop |
+|                                     | Left      | Right      | Increment | Decrement | Output | Input | Start loop | End loop |
 |-------------------------------------|:---------:|:----------:|:---------:|:---------:|:------:|:-----:|:----------:|:--------:|
 | Z₁₁ Residue                         | 1         | 2          | 3         | 4         | 5      | 6     | 7          | 8        |
 | Brainfuck Equivalent                | >         | <          | +         | -         | .      | ,     | \[         | \]       |
