@@ -86,7 +86,7 @@ def translate(num)
             i += 1
         end
         num /= i
-				res += str[i % 11]
+	res += str[i % 11]
     end
     res
 end
