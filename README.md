@@ -7,8 +7,8 @@
 -   [Examples](#examples)
 -   [Computational Class](#computational-class)
 -   [Translations](#translations)
-    - 	[Brainfuck to Factor](#brainfuck-to-factor)
-    - 	[Factor to brainfuck](#factor-to-brainfuck)
+    -   [Brainfuck to Factor](#brainfuck-to-factor)
+    -   [Factor to brainfuck](#factor-to-brainfuck)
 -   [Usage](#usage)
 
 ## About
