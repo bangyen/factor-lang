@@ -82,7 +82,7 @@ require 'prime'
 def translate(num)
     res = ''; i = 2; str = '0><+-.,[]'
     while num != 1
-        while num % i != 0 || !i.prime?
+        while num % i != 0
             i += 1
         end
         num /= i
