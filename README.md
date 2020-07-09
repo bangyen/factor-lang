@@ -59,7 +59,7 @@ Finally, a [brainfuck interpreter](http://www.hevanet.com/cristofd/brainfuck/dbf
 ## Computational Class
 The number `11` was chosen because it is the smallest number such that there exists at least `8` (the number of instructions) natural numbers less than and coprime to it. The reason why coprimality is important is because [Dirichlet's theorem](https://en.wikipedia.org/wiki/Dirichlet%27s_theorem_on_arithmetic_progressions) ensures that there are an infinite number of primes that are congruent to each coprime integer modulo `11`. As a result, because Factor is isomorphic to Brainfuck, a Turing complete language, Factor is *also* Turing complete.
 
-## Brainfuck Translations
+## Translations
 Below is Ruby code for translating brainfuck code into Factor.
 ```ruby
 require 'prime'
