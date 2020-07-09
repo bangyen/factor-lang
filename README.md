@@ -6,7 +6,7 @@
 -   [About](#about)
 -   [Examples](#examples)
 -   [Computational Class](#computational-class)
--   [Brainfuck Translations](#brainfuck-translations)
+-   [Translations](#translations)
 -   [Usage](#usage)
 
 ## About
@@ -61,7 +61,6 @@ The number `11` was chosen because it is the smallest number such that there exi
 
 ## Brainfuck Translations
 Below is Ruby code for translating brainfuck code into Factor.
-
 ```ruby
 require 'prime'
 
@@ -72,6 +71,22 @@ def translate(code)
             i += 1
         end
         res *= i
+    end
+    res
+end
+```
+Below is Ruby code for translating Factor code into brainfuck.
+```ruby
+require 'prime'
+
+def translate(num)
+    res = ''; i = 2; str = '0><+-.,[]'
+    while num != 1
+        while num % i != 0 || !i.prime?
+            i += 1
+        end
+        num /= i
+				res += str[i % 11]
     end
     res
 end
