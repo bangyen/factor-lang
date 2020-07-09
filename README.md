@@ -65,7 +65,9 @@ The number `11` was chosen because it is the smallest number such that there exi
 ## Translations
 ### Brainfuck to Factor
 ```ruby
+# Ruby program
 require 'prime'
+
 def translate(code)
     res = 1; i = 2; str = '0><+-.,[]'
     for char in code.chars
@@ -80,7 +82,9 @@ end
 
 ### Factor to brainfuck
 ```ruby
+# Ruby program
 require 'prime'
+
 def translate(num)
     res = ''; i = 2; str = '0><+-.,[]'
     while num != 1
